@@ -1,0 +1,40 @@
+<% title "Tasklist" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @tasklist.name %>
+</p>
+<p>
+  <strong>Scope:</strong>
+  <%=h @tasklist.scope %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%=h @tasklist.genre %>
+</p>
+<p>
+  <strong>Project:</strong>
+  <%=h @tasklist.project %>
+</p>
+<p>
+  <strong>Assigned To:</strong>
+  <%=h @tasklist.user.shortname %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @tasklist.description %>
+</p>
+<p>
+  <strong>Due Date:</strong>
+  <%=h @tasklist.due_date %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%=h @tasklist.status %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_tasklist_path(@tasklist) %> |
+  <%= link_to "Destroy", @tasklist, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tasklists_path %>
+</p>

@@ -21,7 +21,7 @@ development:
   database: tasklist_development
   pool: 5
   username: root
-  password:
+  password: sys64738
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -34,7 +34,7 @@ test:
   database: tasklist_test
   pool: 5
   username: root
-  password:
+  password: sys64738
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -44,5 +44,5 @@ production:
   database: tasklist_production
   pool: 5
   username: root
-  password: 
+  password: sys64738
   socket: /var/run/mysqld/mysqld.sock
