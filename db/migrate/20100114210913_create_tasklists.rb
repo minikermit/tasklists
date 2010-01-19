@@ -4,9 +4,10 @@ class CreateTasklists < ActiveRecord::Migration
       t.string :name
       t.string :scope
       t.string :genre
-      t.string :project
+      t.integer :project_id
       t.integer :user_id 
       t.text :description
+      t.string :priority
       t.date :due_date
       t.string :status
       t.timestamps

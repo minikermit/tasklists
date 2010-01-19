@@ -9,16 +9,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100114211921) do
+ActiveRecord::Schema.define(:version => 20100117211250) do
+
+  create_table "menus", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "htmllink"
+    t.string   "target"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasklists", :force => true do |t|
     t.string   "name"
     t.string   "scope"
     t.string   "genre"
-    t.string   "project"
+    t.integer  "project_id"
     t.integer  "user_id"
     t.text     "description"
-    t.date     "due_date"
+    t.string   "priority"
+    t.datetime "due_date"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"

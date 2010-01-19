@@ -13,6 +13,7 @@ class TasklistsController < ApplicationController
   
   def create
     @users = User.find(:all)
+    @projects = Project.find(:all)
     @tasklist = Tasklist.new(params[:tasklist])
     if @tasklist.save
       flash[:notice] = "Successfully created tasklist."
@@ -29,6 +30,7 @@ class TasklistsController < ApplicationController
   
   def update
     @users = User.find(:all)
+    @projects = Project.find(:all)
     @tasklist = Tasklist.find(params[:id])
     if @tasklist.update_attributes(params[:tasklist])
       flash[:notice] = "Successfully updated tasklist."

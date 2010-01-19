@@ -15,6 +15,14 @@
       <%- if show_title? -%>
         <h1><%=h yield(:title) %></h1>
       <%- end -%>
+
+
+
+     <ul id="menu">
+	<% for menu in Menu.roots %>
+	<li><%= link_to h(menu.name), menu %> </li>
+        <% end %>
+     </ul>
       
       <%= yield %>
     </div>

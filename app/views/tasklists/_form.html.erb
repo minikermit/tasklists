@@ -10,11 +10,14 @@
   </p>
   <p>
     <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
+    <!--%= f.text_field :genre %-->
+    <%= select_tag("tasklist[genre]", options_for_select(["Please select","New Feature","New Control","Bug","Nice to have","New Specifications","Enhancements"], :disabled => "Please select")) %>  
   </p>
   <p>
     <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <!--%= f.text_field :project %-->
+    <!--%= select_tag("tasklist[project]", options_for_select(["Please select","Basel II","Swiss Reporting","Singapore Reporting","Luxembourg Reporting","Fire","Fimis"], :disabled => "Please select")) %--> 
+    <%= collection_select (:tasklist, :project_id, Project.find(:all), :id, :title, {:prompt => true} ) %>
   </p>
   <p>
     <%= f.label :assigned_to %><br />
@@ -29,8 +32,15 @@
     <%= f.date_select :due_date %>
   </p>
   <p>
+    <%= f.label :priority %><br />
+    <!--%= f.text_field :priority %-->
+    <%= select_tag("tasklist[priority]", options_for_select(["Please select","Low","Medium","High","Urgent"], :disabled => "Please select")) %>  
+  </p>
+
+  <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <!--%= f.text_field :status %-->   
+    <%= select_tag("tasklist[status]", options_for_select(["Please select","To start","In progress","Done","Discarded","Reopened","to review"], :disabled => "Please select")) %>  
   </p>
 <p><%= f.submit "Submit" %></p>
 <% end %>

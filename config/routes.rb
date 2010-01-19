@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :menus
+
+  map.resources :projects
+
   map.resources :users
 
   map.resources :tasklists

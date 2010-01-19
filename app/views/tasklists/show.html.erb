@@ -14,7 +14,7 @@
 </p>
 <p>
   <strong>Project:</strong>
-  <%=h @tasklist.project %>
+  <%=h @tasklist.project.title %>
 </p>
 <p>
   <strong>Assigned To:</strong>
@@ -28,6 +28,11 @@
   <strong>Due Date:</strong>
   <%=h @tasklist.due_date %>
 </p>
+<p>
+ <strong>Priority:</strong>
+ <%=h  @tasklist.priority %>
+</p>
+
 <p>
   <strong>Status:</strong>
   <%=h @tasklist.status %>
